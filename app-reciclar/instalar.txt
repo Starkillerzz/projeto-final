@@ -1,0 +1,2 @@
+toast
+npm install --save react-native-toast-message

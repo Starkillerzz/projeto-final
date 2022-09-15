@@ -1,4 +1,4 @@
-import { StyleSheet, Text, Image, View} from 'react-native';
+import { StyleSheet, Text, Image, View } from 'react-native';
 import { createDrawerNavigator, DrawerItem } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
 import Home from './src/componentes/Home';
@@ -10,55 +10,71 @@ import Locais from './src/componentes/Locais'
 import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
 import Toast from 'react-native-toast-message';
 
+
+
+
 const Drawer = createDrawerNavigator();
 export default function App() {
 
   return (
     <SafeAreaProvider>
-    <NavigationContainer>
-      <SafeAreaView
-        style={{
-          backgroundColor:"yellowgreen",
-          borderBottomColor: 'yellowgreen',
-          borderBottomWidth: StyleSheet.hairlineWidth,
+      <NavigationContainer useLegacyImplementation>
+        <SafeAreaView
+          style={{
+            backgroundColor: "palegoldenrod",
+            borderBottomColor: 'palegoldenrod',
+            borderBottomWidth: StyleSheet.hairlineWidth,
+            flexDirection: 'row',
+            alignItems: 'center',
+            justifyContent: 'center'
+
+          }}
+        >
+
+          <Image
+            source={require('./assets/Logo.png')}
+            style={styles.img}
+          />
+
+        </SafeAreaView>
+        <Drawer.Navigator screenOptions={{
+          drawerStyle: {
+            backgroundColor: 'palegoldenrod',
+            width: 200
+          },
+         
+          headerStyle:{
+            backgroundColor:'forestgreen'
+          } 
         }}
-      >
-      <Text>TESTEEEEE</Text>
-      <Image 
-               source={require('./assets/Logo.jpg')}
-               style={styles.img}
-            />
-      </SafeAreaView>
-      <Drawer.Navigator   screenOptions={{
-        drawerStyle: {
-          backgroundColor: 'yellowgreen',
-          width: 240,
-        },
-      }} useLegacyImplementation>
-        <Drawer.Screen style={styles.titulo} name="Home" component={Home}
-          options={() => ({
-            drawerIcon: () => (<Icon name="home" size={26}
-              color="green" 
-              drawerContentStyle={{backgroundColor: "yellowgreen"}}/>
-            )
-          })} />
-        <Drawer.Screen style={styles.titulo}  name="Reciclar" component={Reciclar}
-          options={() => ({
-            drawerIcon: () => (<Icone name="recycle" size={26}
-              color="green" />
-            )
-          })} />
-        <Drawer.Screen style={styles.titulo}  name="Locais" component={Locais}
-          options={() => ({
-            drawerIcon: () => (<Icone name="truck" size={26}
-              color="green" />
-            )
-          })} />
-        
-      </Drawer.Navigator>
-      <Toast/>
-    </NavigationContainer >
-    </SafeAreaProvider>
+
+          >
+
+          <Drawer.Screen style={styles.titulo} name="Home" component={Home}
+
+            options={() => ({
+              drawerIcon: () => (<Icon name="home" size={26}
+                color="green"
+                drawerContentStyle={{ backgroundColor: "palegoldenrod" }} />
+              )
+            })} />
+          <Drawer.Screen style={styles.titulo} name="Reciclar" component={Reciclar}
+            options={() => ({
+              drawerIcon: () => (<Icone name="recycle" size={26}
+                color="green" />
+              )
+            })} />
+          <Drawer.Screen style={styles.titulo} name="Locais" component={Locais}
+            options={() => ({
+              drawerIcon: () => (<Icone name="truck" size={26}
+                color="green" />
+              )
+            })} />
+
+        </Drawer.Navigator>
+        <Toast />
+      </NavigationContainer >
+    </SafeAreaProvider >
   );
 }
 
@@ -69,12 +85,21 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  titulo:{
+  titulo: {
     flex: 1,
-    drawerBackgroundColor: 'yellowgreen'
-  }, 
-  img:{
-    width: 100,
-    height:100
+    backgroundColor: 'palegoldenrod',
+    height: 50
+  },
+  img: {
+    width: 300,
+    height: 150
+
+  },
+  background: {
+    position: 'absolute',
+    left: 0,
+    right: 0,
+    top: 0,
+    height: '100%',
   }
-});
+})
