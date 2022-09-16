@@ -30,20 +30,34 @@ function Home() {
                 width={width}
                 height={300}
                 autoPlay={true}
-                data={[...new Array(6).keys()]}
-                scrollAnimationDuration={3000}
+                data={[{
+                    key: 1,
+                    image: require('../../assets/lata_d1.jpg')
+                }, 
+                {
+                    key:2,
+                    image: require('../../assets/Logo.png')
+
+                },
+                {
+                    key:3,
+                    image:require('../../assets/lixeiro.png')
+                }]}
+                scrollAnimationDuration={2000}
                 onSnapToItem={(index) => console.log('current index:', index)}
-                renderItem={({ index }) => (
+                renderItem={({ item } ) => (
                     <View
                         style={{
                             flex: 1,
-                            borderWidth: 1,
+                            
                             justifyContent: 'center',
                         }}
                     >
-                        <Text style={{ textAlign: 'center', fontSize: 30 }}>
-                            {index}
-                        </Text>
+                        <Image
+                            source={item.image}
+                            style={styles.imagens}
+                        />
+    
                     </View>
                 )}
             />
@@ -63,6 +77,11 @@ const styles= StyleSheet.create({
         right: 0,
         top: 0,
         height: '100%',
+      },
+      imagens: {
+        height:'100%',
+        width:'100%',
+        
       }
 })
 

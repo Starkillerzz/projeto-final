@@ -42,10 +42,11 @@ export default function App() {
             backgroundColor: 'palegoldenrod',
             width: 200
           },
-         
-          headerStyle:{
-            backgroundColor:'forestgreen'
-          } 
+          // headerStyle:{
+          //   backgroundColor:'lightyellow'
+          // },
+          headerTransparent: true
+      
         }}
 
           >
