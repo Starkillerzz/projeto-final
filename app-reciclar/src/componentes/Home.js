@@ -1,30 +1,32 @@
 import * as React from 'react';
-import { useState } from 'react';
-import { Dimensions, Image, Text, View, StyleSheet } from 'react-native';
+import { Dimensions, Image, Text, View, StyleSheet, TouchableOpacity } from 'react-native';
 import Carousel from 'react-native-reanimated-carousel';
-import { LinearGradient } from 'expo-linear-gradient';
 
 
-function Home() {
+
+function Home({navigation}) {
     const width = Dimensions.get('window').width;
-    const [data, setData] = useState([{
-        title: 'titulo',
-        body: 'teste',
-        source: 'https://images.ecycle.com.br/wp-content/uploads/2021/05/20195924/o-que-e-paisagem.jpg.webp'
-    }])
 
     return (
         <View 
         style={styles.container}>
-              <LinearGradient
-            style={{
-                height: '100%',
-                width: '100%'}}
+            <View style={styles.container2}>
+            <TouchableOpacity
+            onPress={() => navigation.navigate('Locais')}>
+                <Text style={styles.buttonText}>Locais</Text>
+            </TouchableOpacity>
 
-                colors={['palegoldenrod', 'lightgreen']}
-                style={styles.background}
+            <TouchableOpacity
+            onPress={() => navigation.navigate('Reciclar')}>
+                <Text style={styles.buttonText}>Reciclar</Text>
+            </TouchableOpacity>
 
-            ></LinearGradient>
+            <TouchableOpacity
+            onPress={() => navigation.navigate('Logistica Reversa')}>
+                <Text style={styles.buttonText}>Logistica Reversa</Text>
+            </TouchableOpacity>
+            </View>
+            
             <Carousel
                 loop
                 width={width}
@@ -32,19 +34,19 @@ function Home() {
                 autoPlay={true}
                 data={[{
                     key: 1,
-                    image: require('../../assets/lata_d1.jpg')
+                    image: require('../../assets/como-reciclar-o-lixo-domestico.jpg')
                 }, 
                 {
                     key:2,
-                    image: require('../../assets/Logo.png')
+                    image: require('../../assets/reciclar3.jpg')
 
                 },
                 {
                     key:3,
-                    image:require('../../assets/lixeiro.png')
+                    image:require('../../assets/Reciclagem-em-casa.png')
                 }]}
                 scrollAnimationDuration={2000}
-                onSnapToItem={(index) => console.log('current index:', index)}
+                //onSnapToItem={(index) => console.log('current index:', index)}
                 renderItem={({ item } ) => (
                     <View
                         style={{
@@ -69,6 +71,7 @@ const styles= StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
+        marginBottom: 80
         
       },
       background: {
@@ -82,6 +85,16 @@ const styles= StyleSheet.create({
         height:'100%',
         width:'100%',
         
+      },
+      buttonText:{
+          fontWeight: 'bold',
+          fontSize: 30,
+          marginBottom: 10
+      },
+      container2:{
+          alignItems: 'center',
+          marginBottom: 70
+    
       }
 })
 

@@ -1,45 +1,40 @@
-import { LinearGradient } from 'expo-linear-gradient';
 import React from 'react'
-import {View, Text, TextInput,StyleSheet, SafeAreaView} from 'react-native'
-import { TouchableOpacity } from 'react-native-gesture-handler'
+import {View, Text,StyleSheet, TouchableOpacity} from 'react-native'
+
 import Toast from 'react-native-toast-message';
 
 
-function Reciclar (){
+function Reciclar ({navigation}){
     return(
-        <View style={styles.container}>
-            
-            <LinearGradient
-            style={{
-                height: '100%',
-                width: '100%'}}
-
-                colors={['palegoldenrod', 'lightgreen']}
-                style={styles.background}
-
-            ></LinearGradient>
+        <View>
             <Text>Aqui você vai descobrir como reciclar!</Text>
+
             <TouchableOpacity
             onPress={()=>{
                 Toast.show({
                     type: 'success',
                     text1: "resultado",
-                    text2: "Rodrigo Pitoco!"
+                    text2: "Funcionou!"
                 })
             }}
             >
                 <Text>Toast</Text>
             </TouchableOpacity>
+
+            <TouchableOpacity onPress={()=> navigation.navigate('Não Reciclável') }>
+                <Text>Embalagem metalizada</Text>
+            </TouchableOpacity>
+
+            
         </View>
     )
 }
 
 const styles= StyleSheet.create({
     container: {
-        flex: 1,
         alignItems: 'center',
-        justifyContent: 'center',
-        backgroundColor: 'green'
+        
+        
         
       },
       background: {
