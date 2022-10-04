@@ -1,12 +1,17 @@
-import React from 'react'
+import {useContext} from 'react'
 import {View, Text,StyleSheet, TouchableOpacity} from 'react-native'
+import {AuthContext} from '../context/AuthContext'
 
 import Toast from 'react-native-toast-message';
 
 
+
 function Reciclar ({navigation}){
+    const {usuario} = useContext(AuthContext)
+
     return(
         <View>
+            <Text style={styles.loginContainer}>Você está logado como: {usuario}</Text>
             <Text>Aqui você vai descobrir como reciclar!</Text>
 
             <TouchableOpacity
@@ -43,7 +48,12 @@ const styles= StyleSheet.create({
         right: 0,
         top: 0,
         height: '100%',
-      }
+      },
+      loginContainer:{
+        flex:1,
+        alignSelf: "flex-end",
+        marginRight: 5
+    }
 })
 
 

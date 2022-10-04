@@ -1,16 +1,25 @@
-import * as React from 'react';
-import { Dimensions, Image, Text, View, StyleSheet, TouchableOpacity } from 'react-native';
+import {useContext} from 'react';
+import { Dimensions, Image, Text, View, TouchableOpacity, StyleSheet } from 'react-native';
 import Carousel from 'react-native-reanimated-carousel';
+import { AuthContext } from '../context/AuthContext';
+
 
 
 
 function Home({navigation}) {
     const width = Dimensions.get('window').width;
+    const {usuario} = useContext(AuthContext)
 
     return (
         <View 
         style={styles.container}>
+            <Text style={styles.loginContainer}>Você está logado como: {usuario}</Text>
             <View style={styles.container2}>
+
+            <TouchableOpacity onPress={() => navigation.navigate('Login')}>
+            <Text style={styles.buttonText}>Login</Text>
+            </TouchableOpacity>
+
             <TouchableOpacity
             onPress={() => navigation.navigate('Locais')}>
                 <Text style={styles.buttonText}>Locais</Text>
@@ -25,6 +34,7 @@ function Home({navigation}) {
             onPress={() => navigation.navigate('Logistica Reversa')}>
                 <Text style={styles.buttonText}>Logistica Reversa</Text>
             </TouchableOpacity>
+          
             </View>
             
             <Carousel
@@ -95,6 +105,11 @@ const styles= StyleSheet.create({
           alignItems: 'center',
           marginBottom: 70
     
+      }, 
+      loginContainer:{
+          flex:1,
+          alignSelf: "flex-end",
+          marginRight: 5
       }
 })
 

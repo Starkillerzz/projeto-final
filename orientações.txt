@@ -1,0 +1,13 @@
+pagina home com botões: 
+
+botão em cima com login e registre-se (usando firebase)
+
+-locais
+-Reciclar
+-Logistica reversa
+
+pagina reciclar vai ter vários itens nomeados com botões sendo cada item. Ao clicar em um botão a pessoa é direcionada a pagina que irá mostrar em qual lixeira o seu item deve ser descartado.
+
+pagina locais vai mostrar o mapa com coletas próximo de você 
+
+pagina logistica reversa (não sei o que vai mostrar)

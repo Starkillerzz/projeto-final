@@ -1,12 +1,17 @@
 import React from 'react'
-import {View, Text, StyleSheet, TouchableOpacity} from 'react-native'
-import Toast from 'react-native-toast-message'
+import {View, Text, StyleSheet} from 'react-native'
+import  { AuthContext } from '../context/AuthContext'
+import {useContext} from 'react'
+
 
 
 function Locais (){
+
+    const { usuario } = useContext(AuthContext)
+
     return(
         <View style={styles.container}>
-            <Text>O local de coleta de resíduo mais próximo de você!</Text>
+            <Text style={styles.loginContainer}>Você está logado como: {usuario}</Text>
 
         </View>
 
