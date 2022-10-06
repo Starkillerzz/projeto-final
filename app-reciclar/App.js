@@ -1,11 +1,11 @@
 import * as React from 'react';
-import { StyleSheet, Image} from 'react-native';
+import { StyleSheet} from 'react-native';
 import { createNativeStackNavigator} from '@react-navigation/native-stack';
 import { NavigationContainer} from '@react-navigation/native';
 import Home from './src/componentes/Home';
 import Reciclar from './src/componentes/Reciclar';
 import Locais from './src/componentes/Locais'
-import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
+import {SafeAreaProvider } from 'react-native-safe-area-context';
 import Toast from 'react-native-toast-message';
 import Logistica from './src/componentes/Logistica';
 import NaoReciclavel from './src/componentes/NaoReciclavel';
