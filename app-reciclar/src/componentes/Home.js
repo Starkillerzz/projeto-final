@@ -81,8 +81,13 @@ const styles= StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-        marginBottom: 80
+        marginBottom: '20%'
         
+        
+      },
+      containerButton:{
+        flexDirection: 'row',
+        justifyContent: 'space-between'
       },
       background: {
         position: 'absolute',
@@ -99,11 +104,13 @@ const styles= StyleSheet.create({
       buttonText:{
           fontWeight: 'bold',
           fontSize: 30,
-          marginBottom: 10
+          
       },
       container2:{
-          alignItems: 'center',
-          marginBottom: 70
+          flexDirection: 'row',
+          justifyContent: 'space-around',
+          marginBottom: 10
+          
     
       }, 
       loginContainer:{

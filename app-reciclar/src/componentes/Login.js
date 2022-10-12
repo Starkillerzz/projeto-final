@@ -5,8 +5,8 @@ import { AuthContext } from '../context/AuthContext'
 
 
 export default function Login({navigation}){
-    const [email, setEmail] = useState('teste@gmail.com')
-    const [password, setPassword] = useState('123456')
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
     const { logar } = useContext(AuthContext)
 
     function handleLogin(){

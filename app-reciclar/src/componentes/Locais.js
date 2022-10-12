@@ -1,5 +1,5 @@
 import React from 'react'
-import {View, Text, StyleSheet} from 'react-native'
+import {View, Text, StyleSheet, Image} from 'react-native'
 import  { AuthContext } from '../context/AuthContext'
 import {useContext} from 'react'
 
@@ -12,6 +12,8 @@ function Locais (){
     return(
         <View style={styles.container}>
             <Text style={styles.loginContainer}>Você está logado como: {usuario}</Text>
+            <Image source={'../../assets/favicon.png'}
+                    style={styles.modalImg}/>
 
         </View>
 
@@ -30,7 +32,11 @@ const styles= StyleSheet.create({
         right: 0,
         top: 0,
         height: '100%',
-      }
+      },
+      modalImg:{
+        height: 10,
+        width: 10,
+    }
 })
 
 export default Locais

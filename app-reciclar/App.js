@@ -8,7 +8,6 @@ import Locais from './src/componentes/Locais'
 import {SafeAreaProvider } from 'react-native-safe-area-context';
 import Toast from 'react-native-toast-message';
 import Logistica from './src/componentes/Logistica';
-import NaoReciclavel from './src/componentes/NaoReciclavel';
 import Login from './src/componentes/Login';
 import Registrar from './src/componentes/Registrar';
 import AuthProvider from './src/context/AuthContext';
@@ -29,7 +28,6 @@ export default function App() {
           <Stack.Screen name='Locais' component={Locais}/>
           <Stack.Screen name='Reciclar' component={Reciclar}/>
           <Stack.Screen name='Logistica Reversa' component={Logistica}/>
-          <Stack.Screen name= 'Não Reciclável' component={NaoReciclavel}/>
           <Stack.Screen name= 'Login' component={Login}/>
           <Stack.Screen name='Registrar' component={Registrar}/>
         </Stack.Navigator>
