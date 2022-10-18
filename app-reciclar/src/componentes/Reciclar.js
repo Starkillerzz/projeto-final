@@ -1,5 +1,5 @@
-import {useContext, useState} from 'react'
-import {View, Text,StyleSheet, TouchableOpacity, Modal, Alert, Image} from 'react-native'
+import {useContext, useEffect, useState} from 'react'
+import {View, Text,StyleSheet, TouchableOpacity, Modal, Alert, Image, ImageBackground, SafeAreaView, ScrollView} from 'react-native'
 import {AuthContext} from '../context/AuthContext'
 
 //import Toast from 'react-native-toast-message';
@@ -10,11 +10,35 @@ import {AuthContext} from '../context/AuthContext'
 
 function Reciclar (){
     const [modalVisible, setModalVisible] = useState(false);
-    const {usuario} = useContext(AuthContext)
+    const [modalVisible2, setModalVisible2] = useState(false);
+    const [modalVisible3, setModalVisible3] = useState(false);
+    const [modalVisible4, setModalVisible4] = useState(false);
+    const [modalVisible5, setModalVisible5] = useState(false);
+    const [modalVisible6, setModalVisible6] = useState(false);
+    const [modalVisible7, setModalVisible7] = useState(false);
+    const [modalVisible8, setModalVisible8] = useState(false);
+    const [modalVisible9, setModalVisible9] = useState(false);
+    const [modalVisible10, setModalVisible10] = useState(false);
+    const [modalVisible11, setModalVisible11] = useState(false);
+    const [modalVisible12, setModalVisible12] = useState(false);
+    const [modalVisible13, setModalVisible13] = useState(false);
+    const [modalVisible14, setModalVisible14] = useState(false);
+    const [modalVisible15, setModalVisible15] = useState(false);
+    const [modalVisible16, setModalVisible16] = useState(false);
+    const [modalVisible17, setModalVisible17] = useState(false);
+    const [modalVisible18, setModalVisible18] = useState(false);
+    const [modalVisible19, setModalVisible19] = useState(false);
+    const [modalVisible20, setModalVisible20] = useState(false);
+    const [modalVisible21, setModalVisible21] = useState(false);
+    
+    
+
+
 
     return(
-        <View>
-            <Text style={styles.loginContainer}>Você está logado como: {usuario}</Text>
+        <ScrollView style={{flex:1, height: '100%'}}>
+          <ImageBackground style={styles.imagem} source={require('../../assets/Happy(1).png')}>
+            <View style={styles.Viewtotal}>
     
      <View style={styles.containerResultado}>
       <Modal
@@ -28,14 +52,14 @@ function Reciclar (){
       >
         <View style={styles.centeredView}>
           <View style={styles.modalView}>
-            <Text style={styles.modalText}>Teste!</Text>
-            <Image style={{width: 50, height: 50}} source={require('../../assets/favicon.png')}
+          <Text style={styles.modalText}>Papel</Text>
+            <Image style={styles.modalImg} source={require('../../assets/lixeiro.png')}
                     />
             <TouchableOpacity
               style={[styles.button, styles.buttonClose]}
               onPress={() => setModalVisible(!modalVisible)}
             >
-              <Text style={styles.textStyle}>Hide Modal</Text>
+              <Text style={styles.textStyle}>Fechar</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -44,77 +68,77 @@ function Reciclar (){
         style={[styles.button, styles.buttonOpen]}
         onPress={() => setModalVisible(true)}
       >
-        <Text style={styles.textStyle}>Embalagem metalizada</Text>
+        <Text style={styles.textStyle}>Post-it</Text>
       </TouchableOpacity>
 
       <Modal
         animationType="slide"
         transparent={true}
-        visible={modalVisible}
+        visible={modalVisible2}
         onRequestClose={() => {
           Alert.alert("Modal has been closed.");
-          setModalVisible(!modalVisible);
+          setModalVisible2(!modalVisible2);
         }}
       >
         <View style={styles.centeredView}>
           <View style={styles.modalView}>
-            <Text style={styles.modalText}>Teste!</Text>
-            <Image style={{width: 50, height: 50}} source={require('../../assets/favicon.png')}
+            <Text style={styles.modalText}>Não Reciclável</Text>
+            <Image style={{width: 50, height: 50}} source={require('../../assets/Orgânico.png')}
                     />
             <TouchableOpacity
               style={[styles.button, styles.buttonClose]}
-              onPress={() => setModalVisible(!modalVisible)}
+              onPress={() => setModalVisible2(!modalVisible2)}
             >
-              <Text style={styles.textStyle}>Hide Modal</Text>
+              <Text style={styles.textStyle}>Fechar</Text>
             </TouchableOpacity>
           </View>
         </View>
       </Modal>
       <TouchableOpacity
         style={[styles.button, styles.buttonOpen]}
-        onPress={() => setModalVisible(true)}
+        onPress={() => setModalVisible2(true)}
       >
-        <Text style={styles.textStyle}>Clipes de Papel</Text>
+        <Text style={styles.textStyle}>Embalagem Metalizada</Text>
       </TouchableOpacity>
         
       <Modal
         animationType="slide"
         transparent={true}
-        visible={modalVisible}
+        visible={modalVisible3}
         onRequestClose={() => {
           Alert.alert("Modal has been closed.");
-          setModalVisible(!modalVisible);
+          setModalVisible3(!modalVisible3);
         }}
       >
         <View style={styles.centeredView}>
           <View style={styles.modalView}>
-            <Text style={styles.modalText}>Teste!</Text>
-            <Image style={{width: 50, height: 50}} source={require('../../assets/favicon.png')}
+            <Text style={styles.modalText}>Papel</Text>
+            <Image style={{width: 50, height: 50}} source={require('../../assets/Plastico.png')}
                     />
             <TouchableOpacity
               style={[styles.button, styles.buttonClose]}
-              onPress={() => setModalVisible(!modalVisible)}
+              onPress={() => setModalVisible3(!modalVisible3)}
             >
-              <Text style={styles.textStyle}>Hide Modal</Text>
+              <Text style={styles.textStyle}>Fechar</Text>
             </TouchableOpacity>
           </View>
         </View>
       </Modal>
       <TouchableOpacity
         style={[styles.button, styles.buttonOpen]}
-        onPress={() => setModalVisible(true)}
+        onPress={() => setModalVisible3(true)}
       >
-        <Text style={styles.textStyle}>Show Modal</Text>
+        <Text style={styles.textStyle}>Emabalagem Longa-Vida</Text>
       </TouchableOpacity>
     </View>
 <View style={styles.containerResultado}>
       <Modal
         animationType="slide"
         transparent={true}
-        visible={modalVisible}
+        visible={modalVisible4}
         onRequestClose={() => {
           Alert.alert("Modal has been closed.");
-          setModalVisible(!modalVisible);
+          setModalVisible4(!modalVisible4);
         }}
       >
         <View style={styles.centeredView}>
@@ -124,7 +148,7 @@ function Reciclar (){
                     />
             <TouchableOpacity
               style={[styles.button, styles.buttonClose]}
-              onPress={() => setModalVisible(!modalVisible)}
+              onPress={() => setModalVisible4(!modalVisible4)}
             >
               <Text style={styles.textStyle}>Hide Modal</Text>
             </TouchableOpacity>
@@ -133,7 +157,7 @@ function Reciclar (){
       </Modal>
       <TouchableOpacity
         style={[styles.button, styles.buttonOpen]}
-        onPress={() => setModalVisible(true)}
+        onPress={() => setModalVisible4(true)}
       >
         <Text style={styles.textStyle}>Show Modal</Text>
       </TouchableOpacity>
@@ -141,10 +165,10 @@ function Reciclar (){
       <Modal
         animationType="slide"
         transparent={true}
-        visible={modalVisible}
+        visible={modalVisible5}
         onRequestClose={() => {
           Alert.alert("Modal has been closed.");
-          setModalVisible(!modalVisible);
+          setModalVisible5(!modalVisible5);
         }}
       >
         <View style={styles.centeredView}>
@@ -154,7 +178,7 @@ function Reciclar (){
                     />
             <TouchableOpacity
               style={[styles.button, styles.buttonClose]}
-              onPress={() => setModalVisible(!modalVisible)}
+              onPress={() => setModalVisible5(!modalVisible5)}
             >
               <Text style={styles.textStyle}>Hide Modal</Text>
             </TouchableOpacity>
@@ -163,7 +187,7 @@ function Reciclar (){
       </Modal>
       <TouchableOpacity
         style={[styles.button, styles.buttonOpen]}
-        onPress={() => setModalVisible(true)}
+        onPress={() => setModalVisible5(true)}
       >
         <Text style={styles.textStyle}>Show Modal</Text>
       </TouchableOpacity>
@@ -171,10 +195,10 @@ function Reciclar (){
       <Modal
         animationType="slide"
         transparent={true}
-        visible={modalVisible}
+        visible={modalVisible6}
         onRequestClose={() => {
           Alert.alert("Modal has been closed.");
-          setModalVisible(!modalVisible);
+          setModalVisible6(!modalVisible6);
         }}
       >
         <View style={styles.centeredView}>
@@ -184,7 +208,7 @@ function Reciclar (){
                     />
             <TouchableOpacity
               style={[styles.button, styles.buttonClose]}
-              onPress={() => setModalVisible(!modalVisible)}
+              onPress={() => setModalVisible6(!modalVisible6)}
             >
               <Text style={styles.textStyle}>Hide Modal</Text>
             </TouchableOpacity>
@@ -193,7 +217,7 @@ function Reciclar (){
       </Modal>
       <TouchableOpacity
         style={[styles.button, styles.buttonOpen]}
-        onPress={() => setModalVisible(true)}
+        onPress={() => setModalVisible6(true)}
       >
         <Text style={styles.textStyle}>Show Modal</Text>
       </TouchableOpacity>
@@ -202,10 +226,10 @@ function Reciclar (){
       <Modal
         animationType="slide"
         transparent={true}
-        visible={modalVisible}
+        visible={modalVisible7}
         onRequestClose={() => {
           Alert.alert("Modal has been closed.");
-          setModalVisible(!modalVisible);
+          setModalVisible7(!modalVisible7);
         }}
       >
         <View style={styles.centeredView}>
@@ -215,7 +239,7 @@ function Reciclar (){
                     />
             <TouchableOpacity
               style={[styles.button, styles.buttonClose]}
-              onPress={() => setModalVisible(!modalVisible)}
+              onPress={() => setModalVisible7(!modalVisible7)}
             >
               <Text style={styles.textStyle}>Hide Modal</Text>
             </TouchableOpacity>
@@ -224,7 +248,7 @@ function Reciclar (){
       </Modal>
       <TouchableOpacity
         style={[styles.button, styles.buttonOpen]}
-        onPress={() => setModalVisible(true)}
+        onPress={() => setModalVisible7(true)}
       >
         <Text style={styles.textStyle}>Show Modal</Text>
       </TouchableOpacity>
@@ -232,10 +256,10 @@ function Reciclar (){
       <Modal
         animationType="slide"
         transparent={true}
-        visible={modalVisible}
+        visible={modalVisible8}
         onRequestClose={() => {
           Alert.alert("Modal has been closed.");
-          setModalVisible(!modalVisible);
+          setModalVisible8(!modalVisible8);
         }}
       >
         <View style={styles.centeredView}>
@@ -245,7 +269,7 @@ function Reciclar (){
                     />
             <TouchableOpacity
               style={[styles.button, styles.buttonClose]}
-              onPress={() => setModalVisible(!modalVisible)}
+              onPress={() => setModalVisible8(!modalVisible8)}
             >
               <Text style={styles.textStyle}>Hide Modal</Text>
             </TouchableOpacity>
@@ -254,7 +278,7 @@ function Reciclar (){
       </Modal>
       <TouchableOpacity
         style={[styles.button, styles.buttonOpen]}
-        onPress={() => setModalVisible(true)}
+        onPress={() => setModalVisible8(true)}
       >
         <Text style={styles.textStyle}>Show Modal</Text>
       </TouchableOpacity>
@@ -262,10 +286,10 @@ function Reciclar (){
       <Modal
         animationType="slide"
         transparent={true}
-        visible={modalVisible}
+        visible={modalVisible9}
         onRequestClose={() => {
           Alert.alert("Modal has been closed.");
-          setModalVisible(!modalVisible);
+          setModalVisible9(!modalVisible9);
         }}
       >
         <View style={styles.centeredView}>
@@ -275,7 +299,7 @@ function Reciclar (){
                     />
             <TouchableOpacity
               style={[styles.button, styles.buttonClose]}
-              onPress={() => setModalVisible(!modalVisible)}
+              onPress={() => setModalVisible9(!modalVisible9)}
             >
               <Text style={styles.textStyle}>Hide Modal</Text>
             </TouchableOpacity>
@@ -284,7 +308,7 @@ function Reciclar (){
       </Modal>
       <TouchableOpacity
         style={[styles.button, styles.buttonOpen]}
-        onPress={() => setModalVisible(true)}
+        onPress={() => setModalVisible9(true)}
       >
         <Text style={styles.textStyle}>Show Modal</Text>
       </TouchableOpacity>
@@ -293,10 +317,10 @@ function Reciclar (){
       <Modal
         animationType="slide"
         transparent={true}
-        visible={modalVisible}
+        visible={modalVisible10}
         onRequestClose={() => {
           Alert.alert("Modal has been closed.");
-          setModalVisible(!modalVisible);
+          setModalVisible10(!modalVisible10);
         }}
       >
         <View style={styles.centeredView}>
@@ -306,7 +330,7 @@ function Reciclar (){
                     />
             <TouchableOpacity
               style={[styles.button, styles.buttonClose]}
-              onPress={() => setModalVisible(!modalVisible)}
+              onPress={() => setModalVisible10(!modalVisible10)}
             >
               <Text style={styles.textStyle}>Hide Modal</Text>
             </TouchableOpacity>
@@ -315,7 +339,7 @@ function Reciclar (){
       </Modal>
       <TouchableOpacity
         style={[styles.button, styles.buttonOpen]}
-        onPress={() => setModalVisible(true)}
+        onPress={() => setModalVisible10(true)}
       >
         <Text style={styles.textStyle}>Show Modal</Text>
       </TouchableOpacity>
@@ -323,10 +347,10 @@ function Reciclar (){
       <Modal
         animationType="slide"
         transparent={true}
-        visible={modalVisible}
+        visible={modalVisible11}
         onRequestClose={() => {
           Alert.alert("Modal has been closed.");
-          setModalVisible(!modalVisible);
+          setModalVisible11(!modalVisible11);
         }}
       >
         <View style={styles.centeredView}>
@@ -336,7 +360,7 @@ function Reciclar (){
                     />
             <TouchableOpacity
               style={[styles.button, styles.buttonClose]}
-              onPress={() => setModalVisible(!modalVisible)}
+              onPress={() => setModalVisible11(!modalVisible11)}
             >
               <Text style={styles.textStyle}>Hide Modal</Text>
             </TouchableOpacity>
@@ -345,7 +369,7 @@ function Reciclar (){
       </Modal>
       <TouchableOpacity
         style={[styles.button, styles.buttonOpen]}
-        onPress={() => setModalVisible(true)}
+        onPress={() => setModalVisible11(true)}
       >
         <Text style={styles.textStyle}>Show Modal</Text>
       </TouchableOpacity>
@@ -353,10 +377,10 @@ function Reciclar (){
       <Modal
         animationType="slide"
         transparent={true}
-        visible={modalVisible}
+        visible={modalVisible12}
         onRequestClose={() => {
           Alert.alert("Modal has been closed.");
-          setModalVisible(!modalVisible);
+          setModalVisible12(!modalVisible12);
         }}
       >
         <View style={styles.centeredView}>
@@ -366,7 +390,7 @@ function Reciclar (){
                     />
             <TouchableOpacity
               style={[styles.button, styles.buttonClose]}
-              onPress={() => setModalVisible(!modalVisible)}
+              onPress={() => setModalVisible12(!modalVisible12)}
             >
               <Text style={styles.textStyle}>Hide Modal</Text>
             </TouchableOpacity>
@@ -375,7 +399,7 @@ function Reciclar (){
       </Modal>
       <TouchableOpacity
         style={[styles.button, styles.buttonOpen]}
-        onPress={() => setModalVisible(true)}
+        onPress={() => setModalVisible12(true)}
       >
         <Text style={styles.textStyle}>Show Modal</Text>
       </TouchableOpacity>
@@ -384,20 +408,20 @@ function Reciclar (){
       <Modal
         animationType="slide"
         transparent={true}
-        visible={modalVisible}
+        visible={modalVisible13}
         onRequestClose={() => {
           Alert.alert("Modal has been closed.");
-          setModalVisible(!modalVisible);
+          setModalVisible13(!modalVisible13);
         }}
       >
         <View style={styles.centeredView}>
           <View style={styles.modalView}>
-            <Text style={styles.modalText}>Teste!</Text>
+            <Text style={styles.modalText}>13!</Text>
             <Image style={{width: 50, height: 50}} source={require('../../assets/favicon.png')}
                     />
             <TouchableOpacity
               style={[styles.button, styles.buttonClose]}
-              onPress={() => setModalVisible(!modalVisible)}
+              onPress={() => setModalVisible13(!modalVisible13)}
             >
               <Text style={styles.textStyle}>Hide Modal</Text>
             </TouchableOpacity>
@@ -406,7 +430,7 @@ function Reciclar (){
       </Modal>
       <TouchableOpacity
         style={[styles.button, styles.buttonOpen]}
-        onPress={() => setModalVisible(true)}
+        onPress={() => setModalVisible13(true)}
       >
         <Text style={styles.textStyle}>Show Modal</Text>
       </TouchableOpacity>
@@ -414,10 +438,10 @@ function Reciclar (){
       <Modal
         animationType="slide"
         transparent={true}
-        visible={modalVisible}
+        visible={modalVisible14}
         onRequestClose={() => {
           Alert.alert("Modal has been closed.");
-          setModalVisible(!modalVisible);
+          setModalVisible14(!modalVisible14);
         }}
       >
         <View style={styles.centeredView}>
@@ -427,7 +451,7 @@ function Reciclar (){
                     />
             <TouchableOpacity
               style={[styles.button, styles.buttonClose]}
-              onPress={() => setModalVisible(!modalVisible)}
+              onPress={() => setModalVisible14(!modalVisible14)}
             >
               <Text style={styles.textStyle}>Hide Modal</Text>
             </TouchableOpacity>
@@ -436,7 +460,7 @@ function Reciclar (){
       </Modal>
       <TouchableOpacity
         style={[styles.button, styles.buttonOpen]}
-        onPress={() => setModalVisible(true)}
+        onPress={() => setModalVisible14(true)}
       >
         <Text style={styles.textStyle}>Show Modal</Text>
       </TouchableOpacity>
@@ -444,10 +468,10 @@ function Reciclar (){
       <Modal
         animationType="slide"
         transparent={true}
-        visible={modalVisible}
+        visible={modalVisible15}
         onRequestClose={() => {
           Alert.alert("Modal has been closed.");
-          setModalVisible(!modalVisible);
+          setModalVisible15(!modalVisible15);
         }}
       >
         <View style={styles.centeredView}>
@@ -457,7 +481,7 @@ function Reciclar (){
                     />
             <TouchableOpacity
               style={[styles.button, styles.buttonClose]}
-              onPress={() => setModalVisible(!modalVisible)}
+              onPress={() => setModalVisible15(!modalVisible15)}
             >
               <Text style={styles.textStyle}>Hide Modal</Text>
             </TouchableOpacity>
@@ -466,7 +490,7 @@ function Reciclar (){
       </Modal>
       <TouchableOpacity
         style={[styles.button, styles.buttonOpen]}
-        onPress={() => setModalVisible(true)}
+        onPress={() => setModalVisible15(true)}
       >
         <Text style={styles.textStyle}>Show Modal</Text>
       </TouchableOpacity>
@@ -475,10 +499,10 @@ function Reciclar (){
       <Modal
         animationType="slide"
         transparent={true}
-        visible={modalVisible}
+        visible={modalVisible16}
         onRequestClose={() => {
           Alert.alert("Modal has been closed.");
-          setModalVisible(!modalVisible);
+          setModalVisible16(!modalVisible16);
         }}
       >
         <View style={styles.centeredView}>
@@ -488,7 +512,7 @@ function Reciclar (){
                     />
             <TouchableOpacity
               style={[styles.button, styles.buttonClose]}
-              onPress={() => setModalVisible(!modalVisible)}
+              onPress={() => setModalVisible16(!modalVisible16)}
             >
               <Text style={styles.textStyle}>Hide Modal</Text>
             </TouchableOpacity>
@@ -497,7 +521,7 @@ function Reciclar (){
       </Modal>
       <TouchableOpacity
         style={[styles.button, styles.buttonOpen]}
-        onPress={() => setModalVisible(true)}
+        onPress={() => setModalVisible16(true)}
       >
         <Text style={styles.textStyle}>Show Modal</Text>
       </TouchableOpacity>
@@ -505,10 +529,10 @@ function Reciclar (){
       <Modal
         animationType="slide"
         transparent={true}
-        visible={modalVisible}
+        visible={modalVisible17}
         onRequestClose={() => {
           Alert.alert("Modal has been closed.");
-          setModalVisible(!modalVisible);
+          setModalVisible17(!modalVisible17);
         }}
       >
         <View style={styles.centeredView}>
@@ -518,7 +542,7 @@ function Reciclar (){
                     />
             <TouchableOpacity
               style={[styles.button, styles.buttonClose]}
-              onPress={() => setModalVisible(!modalVisible)}
+              onPress={() => setModalVisible17(!modalVisible17)}
             >
               <Text style={styles.textStyle}>Hide Modal</Text>
             </TouchableOpacity>
@@ -527,7 +551,7 @@ function Reciclar (){
       </Modal>
       <TouchableOpacity
         style={[styles.button, styles.buttonOpen]}
-        onPress={() => setModalVisible(true)}
+        onPress={() => setModalVisible17(true)}
       >
         <Text style={styles.textStyle}>Show Modal</Text>
       </TouchableOpacity>
@@ -535,20 +559,20 @@ function Reciclar (){
       <Modal
         animationType="slide"
         transparent={true}
-        visible={modalVisible}
+        visible={modalVisible18}
         onRequestClose={() => {
           Alert.alert("Modal has been closed.");
-          setModalVisible(!modalVisible);
+          setModalVisible18(!modalVisible18);
         }}
       >
         <View style={styles.centeredView}>
           <View style={styles.modalView}>
             <Text style={styles.modalText}>Teste!</Text>
-            <Image style={{width: 50, height: 50}} source={require('../../assets/favicon.png')}
+            <Image style={{width: 80, height: 80}} source={require('../../assets/Papel.png')}
                     />
             <TouchableOpacity
               style={[styles.button, styles.buttonClose]}
-              onPress={() => setModalVisible(!modalVisible)}
+              onPress={() => setModalVisible18(!modalVisible18)}
             >
               <Text style={styles.textStyle}>Hide Modal</Text>
             </TouchableOpacity>
@@ -557,19 +581,19 @@ function Reciclar (){
       </Modal>
       <TouchableOpacity
         style={[styles.button, styles.buttonOpen]}
-        onPress={() => setModalVisible(true)}
+        onPress={() => setModalVisible18(true)}
       >
-        <Text style={styles.textStyle}>Show Modal</Text>
+        <Text style={styles.textStyle}>Folha de Papel</Text>
       </TouchableOpacity>
 </View>
 <View style={styles.containerResultado}>
       <Modal
         animationType="slide"
         transparent={true}
-        visible={modalVisible}
+        visible={modalVisible19}
         onRequestClose={() => {
           Alert.alert("Modal has been closed.");
-          setModalVisible(!modalVisible);
+          setModalVisible19(!modalVisible19);
         }}
       >
         <View style={styles.centeredView}>
@@ -579,7 +603,7 @@ function Reciclar (){
                     />
             <TouchableOpacity
               style={[styles.button, styles.buttonClose]}
-              onPress={() => setModalVisible(!modalVisible)}
+              onPress={() => setModalVisible19(!modalVisible19)}
             >
               <Text style={styles.textStyle}>Hide Modal</Text>
             </TouchableOpacity>
@@ -588,7 +612,7 @@ function Reciclar (){
       </Modal>
       <TouchableOpacity
         style={[styles.button, styles.buttonOpen]}
-        onPress={() => setModalVisible(true)}
+        onPress={() => setModalVisible19(true)}
       >
         <Text style={styles.textStyle}>Show Modal</Text>
       </TouchableOpacity>
@@ -596,10 +620,10 @@ function Reciclar (){
       <Modal
         animationType="slide"
         transparent={true}
-        visible={modalVisible}
+        visible={modalVisible20}
         onRequestClose={() => {
           Alert.alert("Modal has been closed.");
-          setModalVisible(!modalVisible);
+          setModalVisible20(!modalVisible20);
         }}
       >
         <View style={styles.centeredView}>
@@ -609,7 +633,7 @@ function Reciclar (){
                     />
             <TouchableOpacity
               style={[styles.button, styles.buttonClose]}
-              onPress={() => setModalVisible(!modalVisible)}
+              onPress={() => setModalVisible20(!modalVisible20)}
             >
               <Text style={styles.textStyle}>Hide Modal</Text>
             </TouchableOpacity>
@@ -618,7 +642,7 @@ function Reciclar (){
       </Modal>
       <TouchableOpacity
         style={[styles.button, styles.buttonOpen]}
-        onPress={() => setModalVisible(true)}
+        onPress={() => setModalVisible20(true)}
       >
         <Text style={styles.textStyle}>Show Modal</Text>
       </TouchableOpacity>
@@ -626,20 +650,20 @@ function Reciclar (){
       <Modal
         animationType="slide"
         transparent={true}
-        visible={modalVisible}
+        visible={modalVisible21}
         onRequestClose={() => {
           Alert.alert("Modal has been closed.");
-          setModalVisible(!modalVisible);
+          setModalVisible21(!modalVisible21);
         }}
       >
         <View style={styles.centeredView}>
           <View style={styles.modalView}>
             <Text style={styles.modalText}>Teste!</Text>
-            <Image style={{width: 50, height: 50}} source={require('../../assets/favicon.png')}
+            <Image style={{width: 80, height: 80}} source={require('../../assets/Papel.png')}
                     />
             <TouchableOpacity
               style={[styles.button, styles.buttonClose]}
-              onPress={() => setModalVisible(!modalVisible)}
+              onPress={() => setModalVisible21(!modalVisible21)}
             >
               <Text style={styles.textStyle}>Hide Modal</Text>
             </TouchableOpacity>
@@ -648,12 +672,15 @@ function Reciclar (){
       </Modal>
       <TouchableOpacity
         style={[styles.button, styles.buttonOpen]}
-        onPress={() => setModalVisible(true)}
+        onPress={() => setModalVisible21(true)}
       >
-        <Text style={styles.textStyle}>Show Modal</Text>
+        <Text style={styles.textStyle}>Folha de Papel</Text>
       </TouchableOpacity>
-      </View>
-    </View>
+</View>
+
+</View>
+      </ImageBackground>
+    </ScrollView>
         /*<View>
             <Text style={styles.loginContainer}>Você está logado como: {usuario}</Text>
             <Text>Aqui você vai descobrir como reciclar!</Text>
@@ -674,19 +701,28 @@ function Reciclar (){
                 <Text>Embalagem metalizada</Text>
             </TouchableOpacity>
 
-            
+           
         </View>*/
     )
 }
 
 const styles= StyleSheet.create({
     containerResultado: {
+      flex: 1,
+      
         flexDirection: 'row',
         justifyContent: 'space-around',
-        marginTop: 10
-    
         
-        
+        width: '100%',
+        height: '100%'
+             
+              
+      },
+      imagem:{
+        flex:1,
+        resizeMode: "cover",
+        width: '100%',
+        height: '100%'
       },
       view2:{
         alignContent: "center"
@@ -707,15 +743,18 @@ const styles= StyleSheet.create({
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
-        marginTop: 22
+        marginTop: 5,
+        
       },
       modalView: {
-        margin: 20,
+       
         backgroundColor: "white",
         borderRadius: 20,
-        padding: 35,
+        padding: 75,
         alignItems: "center",
         shadowColor: "#000",
+        width: 400,
+        height: 300,
         shadowOffset: {
           width: 0,
           height: 2
@@ -729,27 +768,36 @@ const styles= StyleSheet.create({
         padding: 10,
         elevation: 2,
         width: 100,
-        marginTop: 50
+        marginTop: 45
+        
 
       },
       buttonOpen: {
-        backgroundColor: "#F194FF",
+        backgroundColor: "#9bc4b0",
       },
       buttonClose: {
         backgroundColor: "#2196F3",
       },
       textStyle: {
-        color: "white",
+        color: "#337C41",
         fontWeight: "bold",
         textAlign: "center"
       },
       modalText: {
-        marginBottom: 15,
+        marginBottom: 0,
         textAlign: "center"
       },
       modalImg:{
-          height: 10,
-          width: 10,
+          height: '100%',
+          width: '100%',
+          marginLeft: 30,
+          marginTop: 20
+      },
+      Viewtotal:{
+        flex:1,
+        padding: 30,
+       
+        marginBottom: 38
       }
 
 })

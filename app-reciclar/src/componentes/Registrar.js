@@ -1,7 +1,7 @@
 import { useState } from "react"
 import Toast from 'react-native-toast-message'
 import { FontAwesome } from '@expo/vector-icons'
-import { View, Text, StyleSheet, TextInput, TouchableOpacity } from "react-native"
+import { View, Text, StyleSheet, TextInput, TouchableOpacity , ImageBackground} from "react-native"
 import firebase from '../configuracao/firebaseConfig'
 
 export default function Register({navigation}){
@@ -27,6 +27,8 @@ export default function Register({navigation}){
     }
     return(
         <View style={styles.container}>
+            <ImageBackground style={styles.imagem} source={require('../../assets/Happy(1).png')}>
+                <View style={styles.container2}>
             <Text style={styles.label}>Email</Text>
             <TextInput
                 style={styles.input}
@@ -50,11 +52,13 @@ export default function Register({navigation}){
             >
                 <FontAwesome
                     name="user-plus"
-                    color='black'
+                    color= '#9bc4b0'
                     size={24}
                 />
 
             </TouchableOpacity>
+            </View>
+            </ImageBackground>
         </View>
     )
 }
@@ -62,26 +66,40 @@ export default function Register({navigation}){
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#fff',
-        padding: 20
+        resizeMode: "cover",
+       
+        width: '100%'
     },
+    imagem:{
+        flex:1,
+        resizeMode: "cover",
+        width: '100%'
+      },
+      container2:{
+        marginTop:220,
+        padding: 20
+
+      },
     input: {
+        marginTop: 20,
         width: '100%',
-        padding: 10,
+        fontSize: 16,
         borderBottomColor: "black",
         borderBottomWidth: 1,
         marginVertical: 10
     },
     label: {
-        color: '#0099ff',
+        color: '#337C41',
         fontSize: 18
     },
     button: {
-        backgroundColor: 'skyblue',
-        padding: 5,
+        width: 200,
+        backgroundColor: '#9bc4b0',
+        padding: 15,
         alignItems: 'center',
         justifyContent: 'center',
         borderRadius: 5,
-        marginVertical: 10
+        marginVertical: 10,
+        marginHorizontal: 88
     }
 });

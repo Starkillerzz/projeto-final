@@ -1,9 +1,8 @@
 import {useContext} from 'react';
-import { Dimensions, Image, Text, View, TouchableOpacity, StyleSheet } from 'react-native';
+import { Dimensions, Image, Text, View, TouchableOpacity, StyleSheet, ImageBackground } from 'react-native';
 import Carousel from 'react-native-reanimated-carousel';
 import { AuthContext } from '../context/AuthContext';
-
-
+import Icon from 'react-native-vector-icons/FontAwesome'
 
 
 function Home({navigation}) {
@@ -13,30 +12,38 @@ function Home({navigation}) {
     return (
         <View 
         style={styles.container}>
-            <Text style={styles.loginContainer}>Você está logado como: {usuario}</Text>
+            
+<ImageBackground style={styles.imagem} source={require('../../assets/Happy(1).png')}>
+           
+            
             <View style={styles.container2}>
-
-            <TouchableOpacity onPress={() => navigation.navigate('Login')}>
+            
+            <TouchableOpacity style={[styles.button, styles.buttonOpen]}
+            onPress={() => navigation.navigate('Login')}>
+            <Icon style={styles.icone} name="user" size={35} color="#337C41"></Icon>
             <Text style={styles.buttonText}>Login</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity
+            <TouchableOpacity style={[styles.button, styles.buttonOpen]}
             onPress={() => navigation.navigate('Locais')}>
+                <Icon style={styles.icone} name="map" size={35} color="#337C41"></Icon>
                 <Text style={styles.buttonText}>Locais</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity
+            <TouchableOpacity style={[styles.button, styles.buttonOpen]}
             onPress={() => navigation.navigate('Reciclar')}>
+                <Icon style={styles.icone} name="recycle" size={35} color="#337C41"></Icon>
                 <Text style={styles.buttonText}>Reciclar</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity
+            <TouchableOpacity style={[styles.button, styles.buttonOpen]}
             onPress={() => navigation.navigate('Logistica Reversa')}>
+                <Icon style={styles.icone} name="truck" size={35} color="#337C41"></Icon>
                 <Text style={styles.buttonText}>Logistica Reversa</Text>
             </TouchableOpacity>
-          
+           
             </View>
-            
+           
             <Carousel
                 loop
                 width={width}
@@ -44,16 +51,16 @@ function Home({navigation}) {
                 autoPlay={true}
                 data={[{
                     key: 1,
-                    image: require('../../assets/como-reciclar-o-lixo-domestico.jpg')
+                    image: require('../../assets/Slide1.jpg')
                 }, 
                 {
                     key:2,
-                    image: require('../../assets/reciclar3.jpg')
+                    image: require('../../assets/Slide2.jpg')
 
                 },
                 {
                     key:3,
-                    image:require('../../assets/Reciclagem-em-casa.png')
+                    image:require('../../assets/Slide3.jpg')
                 }]}
                 scrollAnimationDuration={2000}
                 //onSnapToItem={(index) => console.log('current index:', index)}
@@ -72,7 +79,9 @@ function Home({navigation}) {
     
                     </View>
                 )}
+                
             />
+              </ImageBackground>
         </View>
     );
 }
@@ -81,13 +90,28 @@ const styles= StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-        marginBottom: '20%'
-        
+        resizeMode: "cover",
+        width: '100%',    
+        borderRadius: 20,  
         
       },
-      containerButton:{
-        flexDirection: 'row',
-        justifyContent: 'space-between'
+      imagem:{
+        flex:1,
+        resizeMode: "cover",
+        width: '100%'
+      },
+      button: {
+        
+        borderRadius: 20,
+        padding: 10,
+        elevation: 2,
+        width: 90,
+        alignItems: 'center'
+       
+      },
+      buttonOpen: {
+        backgroundColor: "#9bc4b0",
+        
       },
       background: {
         position: 'absolute',
@@ -99,22 +123,35 @@ const styles= StyleSheet.create({
       imagens: {
         height:'100%',
         width:'100%',
+        padding: 100,
+        alignSelf: 'center'
         
       },
       buttonText:{
-          fontWeight: 'bold',
-          fontSize: 30,
+       alignContent:'flex-end',
+        fontWeight: 'bold',
+        fontSize: 15,
+        color: '#337C41',
+        alignContent: 'center',
+        
           
       },
+      icone:{
+        
+      },
       container2:{
-          flexDirection: 'row',
-          justifyContent: 'space-around',
-          marginBottom: 10
           
+          flexDirection: 'row-reverse',
+          justifyContent: 'space-around',
+          marginTop: 130,
+          marginBottom: 50,
+         padding: 10,
+          borderRadius: 20
+                  
     
       }, 
       loginContainer:{
-          flex:1,
+          
           alignSelf: "flex-end",
           marginRight: 5
       }

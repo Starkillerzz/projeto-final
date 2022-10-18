@@ -1,0 +1,12 @@
+1.post-it
+2.Embalagem Longa-Vida
+3.Clips de papel
+4.Embalagem Metalizada
+5.Restos de Comida
+6.Papel Toalha
+7.Lata
+8.Grampeador
+9.Sacola
+10.Copo Plástico
+11.Caixa de papelão
+12.

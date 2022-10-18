@@ -12,10 +12,6 @@ import Login from './src/componentes/Login';
 import Registrar from './src/componentes/Registrar';
 import AuthProvider from './src/context/AuthContext';
 
-
-
-
-
 const Stack = createNativeStackNavigator();
 export default function App() {
 
@@ -24,12 +20,38 @@ export default function App() {
       <NavigationContainer>
         <AuthProvider>
         <Stack.Navigator>
-          <Stack.Screen name='Home' component={Home}/>
-          <Stack.Screen name='Locais' component={Locais}/>
-          <Stack.Screen name='Reciclar' component={Reciclar}/>
-          <Stack.Screen name='Logistica Reversa' component={Logistica}/>
-          <Stack.Screen name= 'Login' component={Login}/>
-          <Stack.Screen name='Registrar' component={Registrar}/>
+          <Stack.Screen name='Home' component={Home} options={{
+          tittle: 'Página Inicial',
+          headerStyle:{
+            backgroundColor: '#9BC4B0'
+          }}}/>
+          <Stack.Screen name='Locais' component={Locais} options={{
+          tittle: 'Locais de Coleta',
+          headerStyle:{
+            backgroundColor: '#9BC4B0'
+          }}}/>
+          <Stack.Screen name='Reciclar' component={Reciclar} options={{
+          tittle: 'Reciclando',
+          color: '#337C41',
+          headerStyle:{
+            backgroundColor: '#9BC4B0',
+            
+          }}}/>
+          <Stack.Screen name='Logistica Reversa' component={Logistica} options={{
+          tittle: 'Logística Reversa',
+          headerStyle:{
+            backgroundColor: '#9BC4B0'
+          }}}/>
+          <Stack.Screen name= 'Login' component={Login} options={{
+          tittle: 'Login',
+          headerStyle:{
+            backgroundColor: '#9BC4B0'
+          }}}/>
+          <Stack.Screen name='Registrar' component={Registrar} options={{
+          tittle: 'Cadastro',
+          headerStyle:{
+            backgroundColor: '#9BC4B0'
+          }}}/>
         </Stack.Navigator>
         <Toast/>
         </AuthProvider>
