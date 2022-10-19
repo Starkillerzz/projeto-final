@@ -20,26 +20,26 @@ function Home({navigation}) {
             
             <TouchableOpacity style={[styles.button, styles.buttonOpen]}
             onPress={() => navigation.navigate('Login')}>
-            <Icon style={styles.icone} name="user" size={35} color="#337C41"></Icon>
+            <Icon style={[styles.icone, {marginTop:7}]} name="user" size={35} color="#337C41"></Icon>
             <Text style={styles.buttonText}>Login</Text>
             </TouchableOpacity>
 
             <TouchableOpacity style={[styles.button, styles.buttonOpen]}
             onPress={() => navigation.navigate('Locais')}>
-                <Icon style={styles.icone} name="map" size={35} color="#337C41"></Icon>
+                <Icon style={[styles.icone, {marginTop:7}]} name="map" size={35} color="#337C41"></Icon>
                 <Text style={styles.buttonText}>Locais</Text>
             </TouchableOpacity>
 
             <TouchableOpacity style={[styles.button, styles.buttonOpen]}
             onPress={() => navigation.navigate('Reciclar')}>
-                <Icon style={styles.icone} name="recycle" size={35} color="#337C41"></Icon>
+                <Icon style={[styles.icone, {marginTop:7}]} name="recycle" size={35} color="#337C41"></Icon>
                 <Text style={styles.buttonText}>Reciclar</Text>
             </TouchableOpacity>
 
             <TouchableOpacity style={[styles.button, styles.buttonOpen]}
             onPress={() => navigation.navigate('Logistica Reversa')}>
-                <Icon style={styles.icone} name="truck" size={35} color="#337C41"></Icon>
-                <Text style={styles.buttonText}>Logistica Reversa</Text>
+                <Icon style={[styles.icone, {marginTop:7}]} name="truck" size={35} color="#337C41"></Icon>
+                <Text style={[styles.buttonText, {textAlign: 'center'}]}>Logistica Reversa</Text>
             </TouchableOpacity>
            
             </View>
@@ -128,11 +128,11 @@ const styles= StyleSheet.create({
         
       },
       buttonText:{
-       alignContent:'flex-end',
+       
         fontWeight: 'bold',
         fontSize: 15,
         color: '#337C41',
-        alignContent: 'center',
+        
         
           
       },

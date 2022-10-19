@@ -30,8 +30,14 @@ function Reciclar (){
     const [modalVisible19, setModalVisible19] = useState(false);
     const [modalVisible20, setModalVisible20] = useState(false);
     const [modalVisible21, setModalVisible21] = useState(false);
+    const [alerta, setAlerta] = useState(true)
     
-    
+    useEffect(() => {
+      if(alerta == true){
+        alert("Não se esqueça de separar os itens. Tampas, rótulos etc")
+        setAlerta(false)
+      }
+    }, [alerta])
 
 
 
@@ -52,14 +58,14 @@ function Reciclar (){
       >
         <View style={styles.centeredView}>
           <View style={styles.modalView}>
-          <Text style={styles.modalText}>Papel</Text>
-            <Image style={styles.modalImg} source={require('../../assets/lixeiro.png')}
+          <Text style={styles.modalText}>Papel (Lixeira Azul)</Text>
+            <Image style={styles.modalImg} source={require('../../assets/PapelPequeno.png')}
                     />
             <TouchableOpacity
               style={[styles.button, styles.buttonClose]}
               onPress={() => setModalVisible(!modalVisible)}
             >
-              <Text style={styles.textStyle}>Fechar</Text>
+              <Text style={styles.textStyle2}>Fechar</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -68,7 +74,7 @@ function Reciclar (){
         style={[styles.button, styles.buttonOpen]}
         onPress={() => setModalVisible(true)}
       >
-        <Text style={styles.textStyle}>Post-it</Text>
+        <Text style={[{marginTop: 9}, styles.textStyle]}>Post-it</Text>
       </TouchableOpacity>
 
       <Modal
@@ -82,14 +88,14 @@ function Reciclar (){
       >
         <View style={styles.centeredView}>
           <View style={styles.modalView}>
-            <Text style={styles.modalText}>Não Reciclável</Text>
-            <Image style={{width: 50, height: 50}} source={require('../../assets/Orgânico.png')}
+            <Text style={styles.modalText}>Papel (Lixeira Azul)</Text>
+            <Image style={styles.modalImg} source={require('../../assets/PapelPequeno.png')}
                     />
             <TouchableOpacity
               style={[styles.button, styles.buttonClose]}
               onPress={() => setModalVisible2(!modalVisible2)}
             >
-              <Text style={styles.textStyle}>Fechar</Text>
+              <Text style={styles.textStyle2}>Fechar</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -98,7 +104,7 @@ function Reciclar (){
         style={[styles.button, styles.buttonOpen]}
         onPress={() => setModalVisible2(true)}
       >
-        <Text style={styles.textStyle}>Embalagem Metalizada</Text>
+        <Text style={styles.textStyle}>Embalagem Longa-Vida</Text>
       </TouchableOpacity>
         
       <Modal
@@ -112,14 +118,14 @@ function Reciclar (){
       >
         <View style={styles.centeredView}>
           <View style={styles.modalView}>
-            <Text style={styles.modalText}>Papel</Text>
-            <Image style={{width: 50, height: 50}} source={require('../../assets/Plastico.png')}
+            <Text style={styles.modalText}>Metal (Lixeira Amarela)</Text>
+            <Image style={styles.modalImg} source={require('../../assets/MetalPequeno.png')}
                     />
             <TouchableOpacity
               style={[styles.button, styles.buttonClose]}
               onPress={() => setModalVisible3(!modalVisible3)}
             >
-              <Text style={styles.textStyle}>Fechar</Text>
+              <Text style={styles.textStyle2}>Fechar</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -128,7 +134,7 @@ function Reciclar (){
         style={[styles.button, styles.buttonOpen]}
         onPress={() => setModalVisible3(true)}
       >
-        <Text style={styles.textStyle}>Emabalagem Longa-Vida</Text>
+        <Text style={styles.textStyle}>Clipes de Papel</Text>
       </TouchableOpacity>
     </View>
 <View style={styles.containerResultado}>
@@ -143,14 +149,14 @@ function Reciclar (){
       >
         <View style={styles.centeredView}>
           <View style={styles.modalView}>
-            <Text style={styles.modalText}>Teste!</Text>
-            <Image style={{width: 50, height: 50}} source={require('../../assets/favicon.png')}
+            <Text style={styles.modalText}>Não Reciclável (Lixeira Cinza)</Text>
+            <Image style={styles.modalImg} source={require('../../assets/NreciclavelPequeno.png')}
                     />
             <TouchableOpacity
               style={[styles.button, styles.buttonClose]}
               onPress={() => setModalVisible4(!modalVisible4)}
             >
-              <Text style={styles.textStyle}>Hide Modal</Text>
+              <Text style={styles.textStyle2}>Fechar</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -159,7 +165,7 @@ function Reciclar (){
         style={[styles.button, styles.buttonOpen]}
         onPress={() => setModalVisible4(true)}
       >
-        <Text style={styles.textStyle}>Show Modal</Text>
+        <Text style={styles.textStyle}>Embalagem Metalizada</Text>
       </TouchableOpacity>
 
       <Modal
@@ -173,14 +179,14 @@ function Reciclar (){
       >
         <View style={styles.centeredView}>
           <View style={styles.modalView}>
-            <Text style={styles.modalText}>Teste!</Text>
-            <Image style={{width: 50, height: 50}} source={require('../../assets/favicon.png')}
+            <Text style={styles.modalText}>Orgânico (Lixeira Marrom)</Text>
+            <Image style={styles.modalImg} source={require('../../assets/OrganicoPequeno.png')}
                     />
             <TouchableOpacity
               style={[styles.button, styles.buttonClose]}
               onPress={() => setModalVisible5(!modalVisible5)}
             >
-              <Text style={styles.textStyle}>Hide Modal</Text>
+              <Text style={styles.textStyle2}>Fechar</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -189,7 +195,7 @@ function Reciclar (){
         style={[styles.button, styles.buttonOpen]}
         onPress={() => setModalVisible5(true)}
       >
-        <Text style={styles.textStyle}>Show Modal</Text>
+        <Text style={styles.textStyle}>Restos de Comida</Text>
       </TouchableOpacity>
 
       <Modal
@@ -203,14 +209,14 @@ function Reciclar (){
       >
         <View style={styles.centeredView}>
           <View style={styles.modalView}>
-            <Text style={styles.modalText}>Teste!</Text>
-            <Image style={{width: 50, height: 50}} source={require('../../assets/favicon.png')}
+            <Text style={styles.modalText}>Não Recilável (Lixeira Cinza)</Text>
+            <Image style={styles.modalImg} source={require('../../assets/NreciclavelPequeno.png')}
                     />
             <TouchableOpacity
               style={[styles.button, styles.buttonClose]}
               onPress={() => setModalVisible6(!modalVisible6)}
             >
-              <Text style={styles.textStyle}>Hide Modal</Text>
+              <Text style={styles.textStyle2}>Fechar</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -219,7 +225,7 @@ function Reciclar (){
         style={[styles.button, styles.buttonOpen]}
         onPress={() => setModalVisible6(true)}
       >
-        <Text style={styles.textStyle}>Show Modal</Text>
+        <Text style={[{marginTop: 9}, styles.textStyle]}>Balão</Text>
       </TouchableOpacity>
 </View>
 <View style={styles.containerResultado}>
@@ -234,14 +240,14 @@ function Reciclar (){
       >
         <View style={styles.centeredView}>
           <View style={styles.modalView}>
-            <Text style={styles.modalText}>Teste!</Text>
-            <Image style={{width: 50, height: 50}} source={require('../../assets/favicon.png')}
+            <Text style={styles.modalText}>Metal (Lixeira Amarela)</Text>
+            <Image style={styles.modalImg} source={require('../../assets/MetalPequeno.png')}
                     />
             <TouchableOpacity
               style={[styles.button, styles.buttonClose]}
               onPress={() => setModalVisible7(!modalVisible7)}
             >
-              <Text style={styles.textStyle}>Hide Modal</Text>
+              <Text style={styles.textStyle2}>Fechar</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -250,7 +256,7 @@ function Reciclar (){
         style={[styles.button, styles.buttonOpen]}
         onPress={() => setModalVisible7(true)}
       >
-        <Text style={styles.textStyle}>Show Modal</Text>
+        <Text style={[{marginTop: 9}, styles.textStyle]}>Lata</Text>
       </TouchableOpacity>
 
       <Modal
@@ -264,14 +270,14 @@ function Reciclar (){
       >
         <View style={styles.centeredView}>
           <View style={styles.modalView}>
-            <Text style={styles.modalText}>Teste!</Text>
-            <Image style={{width: 50, height: 50}} source={require('../../assets/favicon.png')}
+            <Text style={styles.modalText}>Orgânico (Lixeira Marrom)</Text>
+            <Image style={styles.modalImg} source={require('../../assets/OrganicoPequeno.png')}
                     />
             <TouchableOpacity
               style={[styles.button, styles.buttonClose]}
               onPress={() => setModalVisible8(!modalVisible8)}
             >
-              <Text style={styles.textStyle}>Hide Modal</Text>
+              <Text style={styles.textStyle2}>Fechar</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -280,7 +286,7 @@ function Reciclar (){
         style={[styles.button, styles.buttonOpen]}
         onPress={() => setModalVisible8(true)}
       >
-        <Text style={styles.textStyle}>Show Modal</Text>
+        <Text style={styles.textStyle}>Palito de Dente</Text>
       </TouchableOpacity>
 
       <Modal
@@ -294,14 +300,14 @@ function Reciclar (){
       >
         <View style={styles.centeredView}>
           <View style={styles.modalView}>
-            <Text style={styles.modalText}>Teste!</Text>
-            <Image style={{width: 50, height: 50}} source={require('../../assets/favicon.png')}
+            <Text style={styles.modalText}>Plástico (Lixeira Vermelha)</Text>
+            <Image style={styles.modalImg} source={require('../../assets/PlasticoPequeno.png')}
                     />
             <TouchableOpacity
               style={[styles.button, styles.buttonClose]}
               onPress={() => setModalVisible9(!modalVisible9)}
             >
-              <Text style={styles.textStyle}>Hide Modal</Text>
+              <Text style={styles.textStyle2}>Fechar</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -310,7 +316,7 @@ function Reciclar (){
         style={[styles.button, styles.buttonOpen]}
         onPress={() => setModalVisible9(true)}
       >
-        <Text style={styles.textStyle}>Show Modal</Text>
+        <Text style={[{marginTop: 9}, styles.textStyle]}>Sacola</Text>
       </TouchableOpacity>
 </View>
 <View style={styles.containerResultado}>
@@ -325,14 +331,14 @@ function Reciclar (){
       >
         <View style={styles.centeredView}>
           <View style={styles.modalView}>
-            <Text style={styles.modalText}>Teste!</Text>
-            <Image style={{width: 50, height: 50}} source={require('../../assets/favicon.png')}
+            <Text style={styles.modalText}>Plástico (Lixeira Vermelha)</Text>
+            <Image style={styles.modalImg} source={require('../../assets/PlasticoPequeno.png')}
                     />
             <TouchableOpacity
               style={[styles.button, styles.buttonClose]}
               onPress={() => setModalVisible10(!modalVisible10)}
             >
-              <Text style={styles.textStyle}>Hide Modal</Text>
+              <Text style={styles.textStyle2}>Fechar</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -341,7 +347,7 @@ function Reciclar (){
         style={[styles.button, styles.buttonOpen]}
         onPress={() => setModalVisible10(true)}
       >
-        <Text style={styles.textStyle}>Show Modal</Text>
+        <Text style={[{marginTop: 9}, styles.textStyle]}>Copo Plástico</Text>
       </TouchableOpacity>
 
       <Modal
@@ -355,14 +361,14 @@ function Reciclar (){
       >
         <View style={styles.centeredView}>
           <View style={styles.modalView}>
-            <Text style={styles.modalText}>Teste!</Text>
-            <Image style={{width: 50, height: 50}} source={require('../../assets/favicon.png')}
+            <Text style={styles.modalText}>Papel (Lixeira Azul)</Text>
+            <Image style={styles.modalImg} source={require('../../assets/PapelPequeno.png')}
                     />
             <TouchableOpacity
               style={[styles.button, styles.buttonClose]}
               onPress={() => setModalVisible11(!modalVisible11)}
             >
-              <Text style={styles.textStyle}>Hide Modal</Text>
+              <Text style={styles.textStyle2}>Fechar</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -371,7 +377,7 @@ function Reciclar (){
         style={[styles.button, styles.buttonOpen]}
         onPress={() => setModalVisible11(true)}
       >
-        <Text style={styles.textStyle}>Show Modal</Text>
+        <Text style={styles.textStyle}>Caixa de Papelão</Text>
       </TouchableOpacity>
 
       <Modal
@@ -385,14 +391,14 @@ function Reciclar (){
       >
         <View style={styles.centeredView}>
           <View style={styles.modalView}>
-            <Text style={styles.modalText}>Teste!</Text>
-            <Image style={{width: 50, height: 50}} source={require('../../assets/favicon.png')}
+            <Text style={styles.modalText}>Vidro (Lixeira Verde)</Text>
+            <Image style={styles.modalImg} source={require('../../assets/VidroPequeno.png')}
                     />
             <TouchableOpacity
               style={[styles.button, styles.buttonClose]}
               onPress={() => setModalVisible12(!modalVisible12)}
             >
-              <Text style={styles.textStyle}>Hide Modal</Text>
+              <Text style={styles.textStyle2}>Fechar</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -401,7 +407,7 @@ function Reciclar (){
         style={[styles.button, styles.buttonOpen]}
         onPress={() => setModalVisible12(true)}
       >
-        <Text style={styles.textStyle}>Show Modal</Text>
+        <Text style={styles.textStyle}>Garrafa de Vidro</Text>
       </TouchableOpacity>
 </View>
 <View style={styles.containerResultado}>
@@ -416,14 +422,14 @@ function Reciclar (){
       >
         <View style={styles.centeredView}>
           <View style={styles.modalView}>
-            <Text style={styles.modalText}>13!</Text>
-            <Image style={{width: 50, height: 50}} source={require('../../assets/favicon.png')}
+            <Text style={styles.modalText}>Metal (Lixeira Amarela)</Text>
+            <Image style={styles.modalImg} source={require('../../assets/MetalPequeno.png')}
                     />
             <TouchableOpacity
               style={[styles.button, styles.buttonClose]}
               onPress={() => setModalVisible13(!modalVisible13)}
             >
-              <Text style={styles.textStyle}>Hide Modal</Text>
+              <Text style={styles.textStyle2}>Fechar</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -432,7 +438,7 @@ function Reciclar (){
         style={[styles.button, styles.buttonOpen]}
         onPress={() => setModalVisible13(true)}
       >
-        <Text style={styles.textStyle}>Show Modal</Text>
+        <Text style={styles.textStyle}>Lata de Refrigerante</Text>
       </TouchableOpacity>
 
       <Modal
@@ -446,14 +452,14 @@ function Reciclar (){
       >
         <View style={styles.centeredView}>
           <View style={styles.modalView}>
-            <Text style={styles.modalText}>Teste!</Text>
-            <Image style={{width: 50, height: 50}} source={require('../../assets/favicon.png')}
+            <Text style={styles.modalText}>Plástico (Lixeira Vermelha)</Text>
+            <Image style={styles.modalImg} source={require('../../assets/PlasticoPequeno.png')}
                     />
             <TouchableOpacity
               style={[styles.button, styles.buttonClose]}
               onPress={() => setModalVisible14(!modalVisible14)}
             >
-              <Text style={styles.textStyle}>Hide Modal</Text>
+              <Text style={styles.textStyle2}>Fechar</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -462,7 +468,7 @@ function Reciclar (){
         style={[styles.button, styles.buttonOpen]}
         onPress={() => setModalVisible14(true)}
       >
-        <Text style={styles.textStyle}>Show Modal</Text>
+        <Text style={[{marginTop: 9}, styles.textStyle]}>Canudo</Text>
       </TouchableOpacity>
 
       <Modal
@@ -476,14 +482,14 @@ function Reciclar (){
       >
         <View style={styles.centeredView}>
           <View style={styles.modalView}>
-            <Text style={styles.modalText}>Teste!</Text>
-            <Image style={{width: 50, height: 50}} source={require('../../assets/favicon.png')}
+            <Text style={styles.modalText}>Vidro (Lixeira Verde)</Text>
+            <Image style={styles.modalImg} source={require('../../assets/VidroPequeno.png')}
                     />
             <TouchableOpacity
               style={[styles.button, styles.buttonClose]}
               onPress={() => setModalVisible15(!modalVisible15)}
             >
-              <Text style={styles.textStyle}>Hide Modal</Text>
+              <Text style={styles.textStyle2}>Fechar</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -492,7 +498,7 @@ function Reciclar (){
         style={[styles.button, styles.buttonOpen]}
         onPress={() => setModalVisible15(true)}
       >
-        <Text style={styles.textStyle}>Show Modal</Text>
+        <Text style={styles.textStyle}>Cacos de Vidro</Text>
       </TouchableOpacity>
 </View>
 <View style={styles.containerResultado}>
@@ -507,14 +513,14 @@ function Reciclar (){
       >
         <View style={styles.centeredView}>
           <View style={styles.modalView}>
-            <Text style={styles.modalText}>Teste!</Text>
-            <Image style={{width: 50, height: 50}} source={require('../../assets/favicon.png')}
+            <Text style={styles.modalText}>Orgânico (Lixeira Marrom)</Text>
+            <Image style={styles.modalImg} source={require('../../assets/OrganicoPequeno.png')}
                     />
             <TouchableOpacity
               style={[styles.button, styles.buttonClose]}
               onPress={() => setModalVisible16(!modalVisible16)}
             >
-              <Text style={styles.textStyle}>Hide Modal</Text>
+              <Text style={styles.textStyle2}>Fechar</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -523,7 +529,7 @@ function Reciclar (){
         style={[styles.button, styles.buttonOpen]}
         onPress={() => setModalVisible16(true)}
       >
-        <Text style={styles.textStyle}>Show Modal</Text>
+        <Text style={styles.textStyle}>Filtro de Café Usado</Text>
       </TouchableOpacity>
 
       <Modal
@@ -537,14 +543,14 @@ function Reciclar (){
       >
         <View style={styles.centeredView}>
           <View style={styles.modalView}>
-            <Text style={styles.modalText}>Teste!</Text>
-            <Image style={{width: 50, height: 50}} source={require('../../assets/favicon.png')}
+            <Text style={styles.modalText}>Não Reciclável (Lixeira Cinza)</Text>
+            <Image style={styles.modalImg} source={require('../../assets/NreciclavelPequeno.png')}
                     />
             <TouchableOpacity
               style={[styles.button, styles.buttonClose]}
               onPress={() => setModalVisible17(!modalVisible17)}
             >
-              <Text style={styles.textStyle}>Hide Modal</Text>
+              <Text style={styles.textStyle2}>Fechar</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -553,7 +559,7 @@ function Reciclar (){
         style={[styles.button, styles.buttonOpen]}
         onPress={() => setModalVisible17(true)}
       >
-        <Text style={styles.textStyle}>Show Modal</Text>
+        <Text style={styles.textStyle}>Etiquetas Adesivas</Text>
       </TouchableOpacity>
 
       <Modal
@@ -567,14 +573,14 @@ function Reciclar (){
       >
         <View style={styles.centeredView}>
           <View style={styles.modalView}>
-            <Text style={styles.modalText}>Teste!</Text>
-            <Image style={{width: 80, height: 80}} source={require('../../assets/Papel.png')}
+            <Text style={styles.modalText}>Não Reciclável (Lixeira Cinza)</Text>
+            <Image style={styles.modalImg} source={require('../../assets/NreciclavelPequeno.png')}
                     />
             <TouchableOpacity
               style={[styles.button, styles.buttonClose]}
               onPress={() => setModalVisible18(!modalVisible18)}
             >
-              <Text style={styles.textStyle}>Hide Modal</Text>
+              <Text style={styles.textStyle2}>Fechar</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -583,7 +589,7 @@ function Reciclar (){
         style={[styles.button, styles.buttonOpen]}
         onPress={() => setModalVisible18(true)}
       >
-        <Text style={styles.textStyle}>Folha de Papel</Text>
+        <Text style={styles.textStyle}>Papel de Cartão Ponto</Text>
       </TouchableOpacity>
 </View>
 <View style={styles.containerResultado}>
@@ -598,14 +604,14 @@ function Reciclar (){
       >
         <View style={styles.centeredView}>
           <View style={styles.modalView}>
-            <Text style={styles.modalText}>Teste!</Text>
-            <Image style={{width: 50, height: 50}} source={require('../../assets/favicon.png')}
+            <Text style={styles.modalText}>Não Reciclável (Lixeira Cinza)</Text>
+            <Image style={styles.modalImg} source={require('../../assets/NreciclavelPequeno.png')}
                     />
             <TouchableOpacity
               style={[styles.button, styles.buttonClose]}
               onPress={() => setModalVisible19(!modalVisible19)}
             >
-              <Text style={styles.textStyle}>Hide Modal</Text>
+              <Text style={styles.textStyle2}>Fechar</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -614,7 +620,7 @@ function Reciclar (){
         style={[styles.button, styles.buttonOpen]}
         onPress={() => setModalVisible19(true)}
       >
-        <Text style={styles.textStyle}>Show Modal</Text>
+        <Text style={styles.textStyle}>Bituca de Cigarro</Text>
       </TouchableOpacity>
 
       <Modal
@@ -628,14 +634,14 @@ function Reciclar (){
       >
         <View style={styles.centeredView}>
           <View style={styles.modalView}>
-            <Text style={styles.modalText}>Teste!</Text>
-            <Image style={{width: 50, height: 50}} source={require('../../assets/favicon.png')}
+            <Text style={styles.modalText}>Não Reciclável (Lixeira Cinza)</Text>
+            <Image style={styles.modalImg} source={require('../../assets/NreciclavelPequeno.png')}
                     />
             <TouchableOpacity
               style={[styles.button, styles.buttonClose]}
               onPress={() => setModalVisible20(!modalVisible20)}
             >
-              <Text style={styles.textStyle}>Hide Modal</Text>
+              <Text style={styles.textStyle2}>Fechar</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -644,7 +650,7 @@ function Reciclar (){
         style={[styles.button, styles.buttonOpen]}
         onPress={() => setModalVisible20(true)}
       >
-        <Text style={styles.textStyle}>Show Modal</Text>
+        <Text style={[{marginTop: 9}, styles.textStyle]}>Cerâmicas</Text>
       </TouchableOpacity>
 
       <Modal
@@ -658,14 +664,14 @@ function Reciclar (){
       >
         <View style={styles.centeredView}>
           <View style={styles.modalView}>
-            <Text style={styles.modalText}>Teste!</Text>
-            <Image style={{width: 80, height: 80}} source={require('../../assets/Papel.png')}
+            <Text style={styles.modalText}>Não Reciclável (Lixeira Cinza)</Text>
+            <Image style={styles.modalImg} source={require('../../assets/NreciclavelPequeno.png')}
                     />
             <TouchableOpacity
               style={[styles.button, styles.buttonClose]}
               onPress={() => setModalVisible21(!modalVisible21)}
             >
-              <Text style={styles.textStyle}>Hide Modal</Text>
+              <Text style={styles.textStyle2}>Fechar</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -674,7 +680,7 @@ function Reciclar (){
         style={[styles.button, styles.buttonOpen]}
         onPress={() => setModalVisible21(true)}
       >
-        <Text style={styles.textStyle}>Folha de Papel</Text>
+        <Text style={[{marginTop: 9}, styles.textStyle]}>Isopor</Text>
       </TouchableOpacity>
 </View>
 
@@ -767,7 +773,7 @@ const styles= StyleSheet.create({
         borderRadius: 20,
         padding: 10,
         elevation: 2,
-        width: 100,
+        width: 110,
         marginTop: 45
         
 
@@ -776,22 +782,33 @@ const styles= StyleSheet.create({
         backgroundColor: "#9bc4b0",
       },
       buttonClose: {
-        backgroundColor: "#2196F3",
+        backgroundColor: "#337C41",
       },
       textStyle: {
         color: "#337C41",
         fontWeight: "bold",
-        textAlign: "center"
+        textAlign: "center",
+        fontSize: 15,
+        
+      },
+      textStyle2: {
+        color: "#9bc4b0",
+        fontWeight: "bold",
+        textAlign: "center",
+        fontSize: 15,
+        
       },
       modalText: {
         marginBottom: 0,
-        textAlign: "center"
+        textAlign: "center",
+        fontWeight: 'bold',
+        fontSize: 20
       },
       modalImg:{
           height: '100%',
           width: '100%',
           marginLeft: 30,
-          marginTop: 20
+          marginTop: 10
       },
       Viewtotal:{
         flex:1,
