@@ -1,10 +1,10 @@
-import { Text, View, ImageBackground , StyleSheet} from "react-native";
+import { Text, View , ImageBackground, StyleSheet} from "react-native";
 
-function Logistica(){
+function Lixeiras(){
     return(
         <ImageBackground style={styles.imagem} source={require('../../assets/Happy(1).png')}>
         <View>
-            <Text>Logistica Reversa</Text>
+            <Text>Lixeiras</Text>
         </View>
         </ImageBackground>
     )
@@ -15,4 +15,5 @@ const styles= StyleSheet.create({
         
         
       }})
-export default Logistica
+
+export default Lixeiras

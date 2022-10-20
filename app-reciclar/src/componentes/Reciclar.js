@@ -1,6 +1,6 @@
-import {useContext, useEffect, useState} from 'react'
-import {View, Text,StyleSheet, TouchableOpacity, Modal, Alert, Image, ImageBackground, SafeAreaView, ScrollView} from 'react-native'
-import {AuthContext} from '../context/AuthContext'
+import {useEffect, useState} from 'react'
+import {View, Text,StyleSheet, TouchableOpacity, Modal, Alert, Image, ImageBackground, ScrollView} from 'react-native'
+
 
 //import Toast from 'react-native-toast-message';
 
@@ -34,7 +34,7 @@ function Reciclar (){
     
     useEffect(() => {
       if(alerta == true){
-        alert("Não se esqueça de separar os itens. Tampas, rótulos etc")
+        alert('LEMBRETE: Importante separar os materiais ao máximo removendo etiquetas, fitas adesivas, tampas, rótulos, etc e descartar no lixeiro correspondente.')
         setAlerta(false)
       }
     }, [alerta])

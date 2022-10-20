@@ -1,5 +1,5 @@
 import React from 'react'
-import {View, Text, StyleSheet, Image, ImageBackground, Dimensions, SafeAreaView, Platform} from 'react-native'
+import {View, StyleSheet, Image, ImageBackground, Dimensions, SafeAreaView, Platform} from 'react-native'
 import { useState, useEffect } from 'react'
 import * as Location from 'expo-location';
 import MapView, { Marker } from 'react-native-maps'
@@ -129,7 +129,7 @@ const styles= StyleSheet.create({
   },
   map: {
       width: Dimensions.get('window').width,
-      height: '80%'//Dimensions.get('window').height,
+      height: Dimensions.get('window').height,
   },
   region: {
       backgroundColor: 'red',

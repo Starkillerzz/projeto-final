@@ -1,13 +1,12 @@
-import {useContext} from 'react';
 import { Dimensions, Image, Text, View, TouchableOpacity, StyleSheet, ImageBackground } from 'react-native';
 import Carousel from 'react-native-reanimated-carousel';
-import { AuthContext } from '../context/AuthContext';
 import Icon from 'react-native-vector-icons/FontAwesome'
 
 
 function Home({navigation}) {
     const width = Dimensions.get('window').width;
-    const {usuario} = useContext(AuthContext)
+    const height = Dimensions.get('window').height
+    
 
     return (
         <View 
@@ -20,33 +19,32 @@ function Home({navigation}) {
             
             <TouchableOpacity style={[styles.button, styles.buttonOpen]}
             onPress={() => navigation.navigate('Login')}>
-            <Icon style={[styles.icone, {marginTop:7}]} name="user" size={35} color="#337C41"></Icon>
+            <Icon style={[styles.icone, {marginTop:7}]} name="user" size={40} color="#337C41"></Icon>
             <Text style={styles.buttonText}>Login</Text>
             </TouchableOpacity>
 
             <TouchableOpacity style={[styles.button, styles.buttonOpen]}
             onPress={() => navigation.navigate('Locais')}>
-                <Icon style={[styles.icone, {marginTop:7}]} name="map" size={35} color="#337C41"></Icon>
+                <Icon style={[styles.icone, {marginTop:7}]} name="map" size={40} color="#337C41"></Icon>
                 <Text style={styles.buttonText}>Locais</Text>
             </TouchableOpacity>
 
             <TouchableOpacity style={[styles.button, styles.buttonOpen]}
             onPress={() => navigation.navigate('Reciclar')}>
-                <Icon style={[styles.icone, {marginTop:7}]} name="recycle" size={35} color="#337C41"></Icon>
+                <Icon style={[styles.icone, {marginTop:7}]} name="recycle" size={40} color="#337C41"></Icon>
                 <Text style={styles.buttonText}>Reciclar</Text>
             </TouchableOpacity>
-
-            <TouchableOpacity style={[styles.button, styles.buttonOpen]}
-            onPress={() => navigation.navigate('Logistica Reversa')}>
-                <Icon style={[styles.icone, {marginTop:7}]} name="truck" size={35} color="#337C41"></Icon>
-                <Text style={[styles.buttonText, {textAlign: 'center'}]}>Logistica Reversa</Text>
-            </TouchableOpacity>
            
+            <TouchableOpacity style={[styles.button, styles.buttonOpen]}
+            onPress={() => navigation.navigate('Destinacao')}>
+                <Icon style={[styles.icone, {marginTop:7}]} name="truck" size={40} color="#337C41"></Icon>
+                <Text style={[styles.buttonText, {textAlign: 'center'}]}>Destinação</Text>
+            </TouchableOpacity>
             </View>
            
             <Carousel
                 loop
-                width={width}
+                width={400}
                 height={300}
                 autoPlay={true}
                 data={[{
@@ -68,8 +66,10 @@ function Home({navigation}) {
                     <View
                         style={{
                             flex: 1,
+                            marginLeft: 15,
                             
-                            justifyContent: 'center',
+
+                            
                         }}
                     >
                         <Image
@@ -123,14 +123,14 @@ const styles= StyleSheet.create({
       imagens: {
         height:'100%',
         width:'100%',
-        padding: 100,
+        padding: 50,
         alignSelf: 'center'
         
       },
       buttonText:{
        
         fontWeight: 'bold',
-        fontSize: 15,
+        fontSize: 13,
         color: '#337C41',
         
         

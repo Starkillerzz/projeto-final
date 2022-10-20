@@ -7,10 +7,13 @@ import Reciclar from './src/componentes/Reciclar';
 import Locais from './src/componentes/Locais'
 import {SafeAreaProvider } from 'react-native-safe-area-context';
 import Toast from 'react-native-toast-message';
-import Logistica from './src/componentes/Logistica';
+import Destinacao from './src/componentes/Destinacao';
 import Login from './src/componentes/Login';
 import Registrar from './src/componentes/Registrar';
 import AuthProvider from './src/context/AuthContext';
+import Aterros from './src/componentes/Aterros'
+import Lixeiras from './src/componentes/Lixeiras';
+import Logistica from './src/componentes/Logistica';
 
 const Stack = createNativeStackNavigator();
 export default function App() {
@@ -37,8 +40,8 @@ export default function App() {
             backgroundColor: '#9BC4B0',
             
           }}}/>
-          <Stack.Screen name='Logistica Reversa' component={Logistica} options={{
-          tittle: 'Logística Reversa',
+          <Stack.Screen name='Destinacao' component={Destinacao} options={{
+          tittle: 'Destinação',
           headerStyle:{
             backgroundColor: '#9BC4B0'
           }}}/>
@@ -49,6 +52,24 @@ export default function App() {
           }}}/>
           <Stack.Screen name='Registrar' component={Registrar} options={{
           tittle: 'Cadastro',
+          headerStyle:{
+            backgroundColor: '#9BC4B0'
+          }}}/>
+
+          <Stack.Screen name='Aterros' component={Aterros} options={{
+          tittle: 'Aterros e Lixões',
+          headerStyle:{
+            backgroundColor: '#9BC4B0'
+          }}}/>
+
+          <Stack.Screen name='Logística Reversa' component={Logistica} options={{
+          tittle: 'Logística Reversa',
+          headerStyle:{
+            backgroundColor: '#9BC4B0'
+          }}}/>
+
+          <Stack.Screen name='Lixeiras' component={Lixeiras} options={{
+          tittle: 'Lixeiras',
           headerStyle:{
             backgroundColor: '#9BC4B0'
           }}}/>

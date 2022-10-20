@@ -52,7 +52,7 @@ export default function Register({navigation}){
             >
                 <FontAwesome
                     name="user-plus"
-                    color= '#9bc4b0'
+                    color= '#337C41'
                     size={24}
                 />
 
